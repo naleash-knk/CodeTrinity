@@ -3,49 +3,43 @@ import java.util.*;
 class Node{
     int val;
     Node next;
-    Node(int n){
-        this.val = n;
-        this.next=null;
+    Node(int val){
+        this.val = val;
+        this.next = null;
     }
+    
 }
 
-public class InsertionLinkedList {
-
-    static void insertAtEnd(Node head, int n){
+public class NodeInsertionAtEnd {
+    
+    static void insertAtEnd(Node head, int val){
         Node current = head;
         while(current.next!=null){
             current=current.next;
         }
-        current.next=new Node(n);
-
+        current.next = new Node(val);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        if(n==0){
-            System.out.println();
-            sc.close();
-            return;
-        }
         Node head = null;
         for(int i=0;i<n;i++){
-            int k=sc.nextInt();
+            int val = sc.nextInt();
             if(head==null){
-                head=new Node(k);
+                head = new Node(val);
             }
             else{
-                insertAtEnd(head, k);
+                insertAtEnd(head, val);
             }
         }
         
         Node iter = head;
-
         while(iter!=null){
             System.out.print(iter.val+" ");
             iter=iter.next;
         }
+        
         sc.close();
-    
     }
 }

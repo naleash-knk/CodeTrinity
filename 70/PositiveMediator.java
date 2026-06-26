@@ -12,11 +12,13 @@ public class PositiveMediator {
           pos++;
         }
       }
+
       if(pos==0){
         System.out.println(-1);
         sc.close();
         return;
       }
+
       int[] posarr = new int[pos];
       int j=0;
       for(int i=0;i<n;i++){
@@ -27,6 +29,7 @@ public class PositiveMediator {
       }
 
       System.out.println(posarr[pos/2]);
+      
       sc.close();
 
     }
